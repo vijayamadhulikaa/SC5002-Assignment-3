@@ -1,0 +1,14 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split, cross_val_score, KFold
+from sklearn.preprocessing import LabelEncoder, StandardScaler
+from sklearn.neural_network import MLPClassifier
+from sklearn.metrics import accuracy_score, silhouette_score
+from sklearn.cluster import KMeans
+
+## Load the dataset
+df = pd.read_csv("customer_shopping_data.csv")
+
+## Drop irrelevant columns
+df_cleaned = df.drop(columns=["invoice_no", "customer_id", "invoice_date"])
